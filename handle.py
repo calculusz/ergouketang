@@ -20,6 +20,14 @@ class Handle(object):
                 content = "pull test! git"
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
+            elif isinstance(recMsg,receive.Msg) and recMsg.MsgType == 'image':
+                toUser=recMsg.FromUserName
+                fromUser=recMsg.ToUserName
+                mediaId=recMsg.MediaId
+                replyMsg = reply.ImageMsg(toUser,fromUser,mediaId)
+                return replyMsg.send()
+
+
             else:
                 print "do nothing"
                 return "success"
