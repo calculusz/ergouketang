@@ -10,7 +10,8 @@ class Material(object):
     def add_news(self, accessToken, news):
         postUrl = "https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=%s" % accessToken
         urlResp = urllib2.urlopen(postUrl, news)
-        print urlResp.read()
+        return urlResp.read()
+        # print urlResp.read()
 
 if __name__ == '__main__':
     myMaterial = Material()
