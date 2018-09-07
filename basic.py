@@ -11,7 +11,7 @@ class Basic:
         self.__leftTime = 0
     def __real_get_access_token(self):
         appId = "wx94252f83ef3e7074"
-        appSecret = "5040b2d0ad547255897aa1a65deee158"
+        appSecret = "8f19d31cd2e51a96781e200eb927b5a9"
 
         postUrl = ("https://api.weixin.qq.com/cgi-bin/token?grant_type="
                    "client_credential&appid=%s&secret=%s" % (appId, appSecret))
