@@ -42,7 +42,7 @@ class Handle(object):
             timestamp = data.timestamp
             nonce = data.nonce
             echostr = data.echostr
-            token = "helloergou" 
+            token = "wangergou"
 
             list = [token, timestamp, nonce]
             list.sort()
