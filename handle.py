@@ -31,6 +31,8 @@ class Handle(object):
                 if recMsg.Event == 'CLICK':
                     if recMsg.Eventkey == 'mpBind':
                         print 'hahahahaha'
+                        toUser = recMsg.FromUserName
+                        fromUser = recMsg.ToUserName
                         content = "enter course code"
                         replyMsg = reply.TextMsg(toUser, fromUser, content)
                         return replyMsg.send()
