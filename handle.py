@@ -30,7 +30,7 @@ class Handle(object):
             if isinstance(recMsg, receive.EventMsg):
                 if recMsg.Event == 'CLICK':
                     if recMsg.Eventkey == 'mpBind':
-                        content = u"输入课程代码".encode('utf-8')
+                        content = "输入课程代码".encode('utf-8')
                         replyMsg = reply.TextMsg(toUser, fromUser, content)
                         return replyMsg.send()
 
