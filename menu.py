@@ -64,7 +64,8 @@ if __name__ == '__main__':
             {
                 "type": "click",
                 "name": "帮助",
-                "key":  "mpHelp"
+                "key":  "mpHelp
+                "
             }
           ]
     }

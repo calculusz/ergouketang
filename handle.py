@@ -26,11 +26,17 @@ class Handle(object):
                 mediaId=recMsg.MediaId
                 replyMsg = reply.ImageMsg(toUser,fromUser,mediaId)
                 return replyMsg.send()
+            # elif isinstance(recMsg,)
+            if isinstance(recMsg, receive.EventMsg):
+                if recMsg.Event == 'CLICK':
+                    if recMsg.Eventkey == 'mpBind':
+                        content = u"输入课程代码".encode('utf-8')
+                        replyMsg = reply.TextMsg(toUser, fromUser, content)
+                        return replyMsg.send()
 
-
-            else:
-                print "do nothing"
-                return "success"
+            # else:
+            print "do nothing"
+            return "success"
         except Exception, Argment:
             return Argment
     def GET(self):
