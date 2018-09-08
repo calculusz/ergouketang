@@ -37,34 +37,34 @@ if __name__ == '__main__':
         [
             {
                 "type": "click",
-                "name": "开发指引",
-                "key":  "mpGuide"
+                "name": "绑定",
+                "key":  "mpBind"
             },
             {
-                "name": "公众平台",
+                "name": "我的",
                 "sub_button":
                 [
                     {
                         "type": "view",
-                        "name": "更新公告",
+                        "name": "课程",
                         "url": "http://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1418702138&token=&lang=zh_CN"
                     },
                     {
                         "type": "view",
-                        "name": "接口权限说明",
+                        "name": "课件",
                         "url": "http://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1418702138&token=&lang=zh_CN"
                     },
                     {
                         "type": "view",
-                        "name": "返回码说明",
+                        "name": "测试",
                         "url": "http://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1433747234&token=&lang=zh_CN"
                     }
                 ]
             },
             {
-                "type": "media_id",
-                "name": "旅行",
-                "media_id": "z2zOokJvlzCXXNhSjF46gdx6rSghwX2xOD5GUV9nbX4"
+                "type": "click",
+                "name": "帮助",
+                "key":  "mpHelp"
             }
           ]
     }
