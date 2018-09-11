@@ -57,7 +57,7 @@ def insert_user(db,uid,course_code):
     cursor = db.cursor()
 
     # SQL 插入语句
-    sql = """INSERT INTO Student
+    sql = """INSERT INTO user
          VALUES (uid,'', 1)
                         """
 

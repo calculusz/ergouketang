@@ -52,6 +52,7 @@ class Handle(object):
 
             # else:
             print "do nothing"
+            closedb(db)
             return "success"
         except Exception, Argment:
             return Argment
