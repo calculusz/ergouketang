@@ -7,19 +7,28 @@ import hashlib
 import web
 import reply
 import receive
+import DB as db
 
 class Handle(object):
     def POST(self):
 	try:
             webData = web.data()
-            print "Handle Post webdata is ", webData   
+            con = db.connectdb()
+            print "Handle Post webdata is ", webData
             recMsg = receive.parse_xml(webData)
-            if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
+            is_b=db.check_binding(con,recMsg.FromUserName)
+            if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text' and is_b!=1:
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 content = "pull test! git"
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
+            elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text' and is_b==1:
+                print("courseid:"+recMsg.Content)
+                db.bind_courese(con,recMsg.FromUserName,recMsg.Content)
+                return 'success'
+
+
             elif isinstance(recMsg,receive.Msg) and recMsg.MsgType == 'image':
                 toUser=recMsg.FromUserName
                 fromUser=recMsg.ToUserName
@@ -30,11 +39,15 @@ class Handle(object):
             if isinstance(recMsg, receive.EventMsg):
                 if recMsg.Event == 'CLICK':
                     if recMsg.Eventkey == 'mpBind':
-                        print 'hahahahaha'
+
                         toUser = recMsg.FromUserName
                         fromUser = recMsg.ToUserName
+                        print(toUser)
                         content = "enter course code"
                         replyMsg = reply.TextMsg(toUser, fromUser, content)
+                        con=db.connectdb()
+                        db.insert_user(con,toUser,'')
+
                         return replyMsg.send()
 
             # else:
