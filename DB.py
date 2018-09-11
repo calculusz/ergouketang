@@ -90,6 +90,7 @@ def check_binding(db,user):
             # 打印结果
             print "isb: {0} " .format(isbinding)
                 # (ID, Name, Grade)
+        return isbinding
     except:
         print "Error: unable to fecth data"
 
