@@ -55,11 +55,8 @@ def insertdb(db):
 def insert_user(db,uid,course_code):
     # 使用cursor()方法获取操作游标
     cursor = db.cursor()
-
     # SQL 插入语句
-    sql = """INSERT INTO user
-         VALUES (uid,'', 1)
-                        """
+    sql = "INSERT INTO user VALUES ({0},'', 1)".format(uid)
 
     #sql = "INSERT INTO Student(ID, Name, Grade) \
     #    VALUES ('%s', '%s', '%d')" % \
