@@ -46,7 +46,7 @@ class Handle(object):
                         content = "enter course code"
                         replyMsg = reply.TextMsg(toUser, fromUser, content)
                         # con=db.connectdb()
-                        db.insert_user(con,toUser,'')
+                        db.insert_user(con,toUser)
 
                         return replyMsg.send()
 

@@ -52,7 +52,7 @@ def insertdb(db):
         print '插入数据失败!'
         db.rollback()
 
-def insert_user(db,uid,course_code):
+def insert_user(db,uid):
     # 使用cursor()方法获取操作游标
     cursor = db.cursor()
     # SQL 插入语句
