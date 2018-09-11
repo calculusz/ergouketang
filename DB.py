@@ -176,17 +176,17 @@ def closedb(db):
 def main():
     db = connectdb()    # 连接MySQL数据库
 
-    createtable(db)     # 创建表
-    insertdb(db)        # 插入数据
-    print '\n插入数据后:'
-    querydb(db)
-    deletedb(db)        # 删除数据
-    print '\n删除数据后:'
-    querydb(db)
-    updatedb(db)        # 更新数据
-    print '\n更新数据后:'
-    querydb(db)
-
+    # createtable(db)     # 创建表
+    # insertdb(db)        # 插入数据
+    # print '\n插入数据后:'
+    # querydb(db)
+    # deletedb(db)        # 删除数据
+    # print '\n删除数据后:'
+    # querydb(db)
+    # updatedb(db)        # 更新数据
+    # print '\n更新数据后:'
+    # querydb(db)
+    #
     closedb(db)         # 关闭数据库
 
 if __name__ == '__main__':
