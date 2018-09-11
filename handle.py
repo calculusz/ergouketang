@@ -17,6 +17,7 @@ class Handle(object):
             print "Handle Post webdata is ", webData
             recMsg = receive.parse_xml(webData)
             is_b=db.check_binding(con,recMsg.FromUserName)
+            print(is_b)
             if  is_b!=1 and isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text' :
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
