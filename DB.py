@@ -58,7 +58,7 @@ def insert_user(db,uid,course_code):
 
     # SQL 插入语句
     sql = """INSERT INTO Student
-         VALUES (uid, course_code, 1)
+         VALUES (uid,'', 1)
                         """
 
     #sql = "INSERT INTO Student(ID, Name, Grade) \
