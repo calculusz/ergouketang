@@ -17,7 +17,7 @@ class Handle(object):
             print "Handle Post webdata is ", webData
             recMsg = receive.parse_xml(webData)
             is_b=db.check_binding(con,recMsg.FromUserName)
-            if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text' and is_b!=1:
+            if  is_b!=1 and isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text' :
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 content = "pull test! git"

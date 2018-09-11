@@ -138,7 +138,7 @@ def bind_courese(db,user,course):
     cursor = db.cursor()
 
     # SQL 更新语句
-    sql = "UPDATE user SET classid = {0} +  WHERE uid = {1}".format (course,user)
+    sql = "UPDATE user SET classid = '{0}',isbinding=0   WHERE uid = '{1}'".format (course,user)
 
     try:
         # 执行SQL语句
