@@ -78,7 +78,7 @@ def check_binding(db,user):
     # SQL 查询语句
     #sql = "SELECT * FROM Student \
     #    WHERE Grade > '%d'" % (80)
-    sql = "SELECT isbinding FROM Student where uid={0}".format(user)
+    sql = "SELECT isbinding FROM user where uid={0}".format(user)
     try:
         # 执行SQL语句
         cursor.execute(sql)
