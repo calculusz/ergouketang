@@ -36,7 +36,7 @@ data='''
 	}
 }
 '''
-postUrl = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s" % access_token
+postUrl = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s" % access_token
 if isinstance(data, unicode):
     data = data.encode('utf-8')
 urlResp = urllib.urlopen(url=postUrl, data=data)
