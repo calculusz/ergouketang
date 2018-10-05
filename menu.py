@@ -46,8 +46,8 @@ if __name__ == '__main__':
                 [
                     {
                         "type": "view",
-                        "name": "课程",
-                        "url": "http://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1418702138&token=&lang=zh_CN"
+                        "name": "课程情况",
+                        "key": "mpState"
                     },
                     {
                         "type": "view",

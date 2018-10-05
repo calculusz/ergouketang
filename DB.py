@@ -25,6 +25,46 @@ def createtable(db):
     # 创建Sutdent表
     cursor.execute(sql)
 
+def query_ppt(db,userid):
+    # 使用cursor()方法获取操作游标
+    cursor = db.cursor()
+    sql1="SELECT filename,page FROM ppt where user='{0}'".format(userid)
+    re={}
+    try:
+        cursor.execute(sql1)
+        temp=cursor.fetchall()
+        fn=temp[-1][0]
+        page=temp[-1][1]
+        sql2 = "SELECT key,count FROM count where source='/static/{0}.html'".format(fn)
+        cursor.execute(sql2)
+        results=cursor.fetchall()
+        for row in results:
+            re[row[0]]=row[1]
+        return re,page
+    except:
+        print "Error: unable to fecth data"
+
+
+    # # SQL 查询语句
+    # #sql = "SELECT * FROM Student \
+    # #    WHERE Grade > '%d'" % (80)
+    # sql2 = "SELECT * FROM count where source='/static/{0}.html'".format(filename)
+    # try:
+    #     # 执行SQL语句
+    #     cursor.execute(sql)
+    #     # 获取所有记录列表
+    #     results = cursor.fetchall()
+    #     for row in results:
+    #         ID = row[0]
+    #         Name = row[1]
+    #         Grade = row[2]
+    #         # 打印结果
+    #         print "ID: %s, Name: %s, Grade: %d" % \
+    #             (ID, Name, Grade)
+    # except:
+    #
+
+
 def insertdb(db):
     # 使用cursor()方法获取操作游标
     cursor = db.cursor()
@@ -185,6 +225,7 @@ def main():
     # print '\n更新数据后:'
     # querydb(db)
     #
+    print(query_ppt(db,'o1bMd05yMLCudsJkhkdVxT2-3-IQ'))
     closedb(db)         # 关闭数据库
 
 if __name__ == '__main__':

@@ -50,6 +50,8 @@ class Handle(object):
                         db.insert_user(con,toUser)
 
                         return replyMsg.send()
+                    elif recMsg.Eventkey == 'mpState':
+
 
             # else:
             print "do nothing"
