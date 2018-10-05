@@ -35,6 +35,9 @@ def query_ppt(db,userid):
         temp=cursor.fetchall()
         fn=temp[-1][0]
         page=temp[-1][1]
+        print(temp)
+        print(fn)
+        print(page)
         sql2 = "SELECT key,count FROM count where source='/static/{0}.html'".format(fn)
         cursor.execute(sql2)
         results=cursor.fetchall()
