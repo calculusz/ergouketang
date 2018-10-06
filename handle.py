@@ -60,7 +60,8 @@ class Handle(object):
                         hist.create_hist(len,re,fn)
                         accessToken = Basic().get_access_token()
                         myMedia = media.Media()
-                        res=myMedia.uplaod(accessToken,'./img/{0}.jpg'.format(fn))
+                        mediaType = "image"
+                        res=myMedia.uplaod(accessToken,'./img/{0}.jpg'.format(fn),mediaType)
                         data = json.loads(res)
                         media_id = data['media_id']
                         replyMsg = reply.ImageMsg(toUser, fromUser, media_id)
