@@ -39,13 +39,14 @@ if __name__ == '__main__':
     accessToken = Basic().get_access_token()
     myMedia = Media()
     # accessToken = Basic().get_access_token()
-    filePath = "/home/dejia/code/test.jpg"   #请安实际填写
+    filePath = "./img/presentation.jpg"   #请安实际填写
     mediaType = "image"
     response=myMedia.uplaod(accessToken, filePath, mediaType)
     # print response.read()
     data=json.loads(response)
 
     media_id=data['media_id']
+    print(media_id)
     myMedia.get(accessToken,media_id)
 
 
