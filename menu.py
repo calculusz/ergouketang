@@ -45,7 +45,7 @@ if __name__ == '__main__':
                 "sub_button":
                 [
                     {
-                        "type": "view",
+                        "type": "click",
                         "name": "课程情况",
                         "key": "mpState"
                     },
