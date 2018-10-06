@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from collections import defaultdict
 def create_hist(len,count,filename):
     # temp=defaultdict(count,0)
+    print("start create hist")
     x=[i for i in range(1,len+1)]
     y=[count[i] for i in range(1,len+1)]
     plt.xlabel("page of questhons")
