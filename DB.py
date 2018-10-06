@@ -2,12 +2,13 @@
 # coding=utf-8
 
 import pymysql
-
+import hist
+from collections import defaultdict
 def connectdb():
     print('连接到mysql服务器...')
     # 打开数据库连接
     # 用户名:hp, 密码:Hp12345.,用户名和密码需要改成你自己的mysql用户名和密码，并且要创建数据库TESTDB，并在TESTDB数据库中创建好表Student
-    db = pymysql.connect("localhost","root","zh123123" ,"ergouketang")
+    db = pymysql.connect("120.77.148.34","root","zh123123" ,"ergouketang")
     print('连接上了!')
     return db
 
@@ -29,7 +30,8 @@ def query_ppt(db,userid):
     # 使用cursor()方法获取操作游标
     cursor = db.cursor()
     sql1="SELECT filename,page FROM ppt where user='{0}'".format(userid)
-    re={}
+    # sql1="SELECT * FROM ppt"
+    re=defaultdict(lambda :0)
     try:
         cursor.execute(sql1)
         temp=cursor.fetchall()
@@ -38,14 +40,15 @@ def query_ppt(db,userid):
         print(temp)
         print(fn)
         print(page)
-        sql2 = "SELECT key,count FROM count where source='/static/{0}.html'".format(fn)
+        sql2="SELECT * FROM count where source='/static/{0}.html'".format(fn)
+        # sql2 = "SELECT key,count FROM count where source='/static/{0}.html'".format(fn)
         cursor.execute(sql2)
         results=cursor.fetchall()
         for row in results:
-            re[row[0]]=row[1]
-        return re,page
+            re[int(row[2],16)]=row[3]
+        return re,page,fn
     except:
-        print "Error: unable to fecth data"
+        print("Error: unable to fecth data")
 
 
     # # SQL 查询语句
@@ -92,7 +95,7 @@ def insertdb(db):
         db.commit()
     except:
         # Rollback in case there is any error
-        print '插入数据失败!'
+        print('插入数据失败!')
         db.rollback()
 
 def insert_user(db,uid):
@@ -111,7 +114,7 @@ def insert_user(db,uid):
         db.commit()
     except:
         # Rollback in case there is any error
-        print '插入数据失败!'
+        print('插入数据失败!')
         db.rollback()
 
 def check_binding(db,user):
@@ -131,11 +134,11 @@ def check_binding(db,user):
             isbinding = row[0]
 
             # 打印结果
-            print "isb: {0} " .format(isbinding)
+            print("isb: {0} " .format(isbinding))
                 # (ID, Name, Grade)
         return isbinding
     except:
-        print "Error: unable to fecth data"
+        print("Error: unable to fecth data")
 
 def querydb(db):
     # 使用cursor()方法获取操作游标
@@ -155,10 +158,10 @@ def querydb(db):
             Name = row[1]
             Grade = row[2]
             # 打印结果
-            print "ID: %s, Name: %s, Grade: %d" % \
-                (ID, Name, Grade)
+            print("ID: %s, Name: %s, Grade: %d" % \
+                (ID, Name, Grade))
     except:
-        print "Error: unable to fecth data"
+        print("Error: unable to fecth data")
 
 def deletedb(db):
     # 使用cursor()方法获取操作游标
@@ -173,7 +176,7 @@ def deletedb(db):
        # 提交修改
        db.commit()
     except:
-        print '删除数据失败!'
+        print('删除数据失败!')
         # 发生错误时回滚
         db.rollback()
 
@@ -190,7 +193,7 @@ def bind_courese(db,user,course):
         # 提交到数据库执行
         db.commit()
     except:
-        print '更新数据失败!'
+        print('更新数据失败!')
         # 发生错误时回滚
         db.rollback()
 
@@ -207,7 +210,7 @@ def updatedb(db):
         # 提交到数据库执行
         db.commit()
     except:
-        print '更新数据失败!'
+        print('更新数据失败!')
         # 发生错误时回滚
         db.rollback()
 
@@ -228,7 +231,8 @@ def main():
     # print '\n更新数据后:'
     # querydb(db)
     #
-    print(query_ppt(db,'o1bMd05yMLCudsJkhkdVxT2-3-IQ'))
+    re,len,fn=query_ppt(db,'o1bMd05yMLCudsJkhkdVxT2-3-lQ')
+    hist.create_hist(len,re,fn)
     closedb(db)         # 关闭数据库
 
 if __name__ == '__main__':

@@ -2,12 +2,15 @@
 
 # -*- coding: utf-8 -*-
 # filename: handle.py
-
+from basic import Basic
 import hashlib
 import web
 import reply
 import receive
+import media
 import DB as db
+import hist
+import json
 
 class Handle(object):
     def POST(self):
@@ -51,7 +54,17 @@ class Handle(object):
 
                         return replyMsg.send()
                     elif recMsg.Eventkey == 'mpState':
-
+                        toUser = recMsg.FromUserName
+                        fromUser = recMsg.ToUserName
+                        re, len, fn=db.query_ppt(con,toUser)
+                        hist.create_hist(len,re,fn)
+                        accessToken = Basic().get_access_token()
+                        myMedia = media.Media()
+                        res=myMedia.uplaod(accessToken,'./img/{0}.jpg'.format(fn))
+                        data = json.loads(res)
+                        media_id = data['media_id']
+                        replyMsg = reply.ImageMsg(toUser, fromUser, media_id)
+                        return recMsg.send
 
             # else:
             print "do nothing"
