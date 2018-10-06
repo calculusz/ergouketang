@@ -39,15 +39,15 @@ if __name__ == '__main__':
     accessToken = Basic().get_access_token()
     myMedia = Media()
     # accessToken = Basic().get_access_token()
-    filePath = "./img/presentation.jpg"   #请安实际填写
-    mediaType = "image"
-    response=myMedia.uplaod(accessToken, filePath, mediaType)
-    # print response.read()
-    data=json.loads(response)
-
-    media_id=data['media_id']
-    print(media_id)
-    myMedia.get(accessToken,media_id)
+    # filePath = "./img/presentation.jpg"   #请安实际填写
+    # mediaType = "image"
+    # response=myMedia.uplaod(accessToken, filePath, mediaType)
+    # # print response.read()
+    # data=json.loads(response)
+    #
+    # media_id=data['media_id']
+    # print(media_id)
+    myMedia.get(accessToken,'KPPQWLBPNNqSyWdURe8L8RV0W4yx8zMz18Zp_8k7lsQJ7hMMhilPLlpyidC2YDUL')
 
 
 
