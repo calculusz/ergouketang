@@ -1,7 +1,7 @@
-
+import matplotlib
+matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
-from collections import defaultdict
 def create_hist(len,count,filename):
     # temp=defaultdict(count,0)
     print("start create hist")
