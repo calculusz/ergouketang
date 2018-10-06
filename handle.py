@@ -37,6 +37,7 @@ class Handle(object):
                 toUser=recMsg.FromUserName
                 fromUser=recMsg.ToUserName
                 mediaId=recMsg.MediaId
+                print(mediaId)
                 replyMsg = reply.ImageMsg(toUser,fromUser,mediaId)
                 return replyMsg.send()
             # elif isinstance(recMsg,)
