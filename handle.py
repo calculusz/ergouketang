@@ -56,14 +56,15 @@ class Handle(object):
                     elif recMsg.Eventkey == 'mpState':
                         toUser = recMsg.FromUserName
                         fromUser = recMsg.ToUserName
-                        re, len, fn=db.query_ppt(con,toUser)
-                        hist.create_hist(len,re,fn)
-                        accessToken = Basic().get_access_token()
-                        myMedia = media.Media()
-                        mediaType = "image"
-                        res=myMedia.uplaod(accessToken,'./img/{0}.jpg'.format(fn),mediaType)
-                        data = json.loads(res)
-                        media_id = data['media_id']
+                        # re, len, fn=db.query_ppt(con,toUser)
+                        # hist.create_hist(len,re,fn)
+                        # accessToken = Basic().get_access_token()
+                        # myMedia = media.Media()
+                        # mediaType = "image"
+                        # res=myMedia.uplaod(accessToken,'./img/{0}.jpg'.format(fn),mediaType)
+                        # data = json.loads(res)
+                        # media_id = data['media_id']
+                        media_id = 'KPPQWLBPNNqSyWdURe8L8RV0W4yx8zMz18Zp_8k7lsQJ7hMMhilPLlpyidC2YDUL'
                         print(media_id)
                         replyMsg = reply.ImageMsg(toUser, fromUser, media_id)
                         return replyMsg.send
