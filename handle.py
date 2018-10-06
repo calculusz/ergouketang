@@ -64,8 +64,9 @@ class Handle(object):
                         res=myMedia.uplaod(accessToken,'./img/{0}.jpg'.format(fn),mediaType)
                         data = json.loads(res)
                         media_id = data['media_id']
+                        print(media_id)
                         replyMsg = reply.ImageMsg(toUser, fromUser, media_id)
-                        return recMsg.send
+                        return replyMsg.send
 
             # else:
             print "do nothing"
