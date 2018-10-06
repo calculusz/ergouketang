@@ -68,7 +68,7 @@ class Handle(object):
                         media_id = 'KPPQWLBPNNqSyWdURe8L8RV0W4yx8zMz18Zp_8k7lsQJ7hMMhilPLlpyidC2YDUL'
                         print(media_id)
                         replyMsg = reply.ImageMsg(toUser, fromUser, media_id)
-                        return replyMsg.send
+                        return replyMsg.send()
 
             # else:
             print "do nothing"
