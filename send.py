@@ -5,7 +5,7 @@ b=basic.Basic()
 access_token=b.get_access_token()
 data='''
 {
-	"touser": "o1bMd0775CIi3NuFPkDg1gnyvwDo",
+	"touser": "o1bMd085OVPCVhib2XBQpEv_aYVM",
 	"template_id": "CO8ABJrb3UJ3Foqx_uN1dJQXRXAP9IhiUdGeo5sxpZA",
 	"url": "http://www.wechatshop.mobi:8080/static/presentation.html",
 	"data": {
