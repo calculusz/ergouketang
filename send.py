@@ -7,7 +7,7 @@ data='''
 {
 	"touser": "o1bMd0775CIi3NuFPkDg1gnyvwDo",
 	"template_id": "CO8ABJrb3UJ3Foqx_uN1dJQXRXAP9IhiUdGeo5sxpZA",
-	"url": "http://www.163.com",
+	"url": "http://www.wechatshop.mobi:8080/static/presentation.html",
 	"data": {
 		"first": {
 			"value": "新的课件发布",
@@ -18,15 +18,15 @@ data='''
 			"color": "#173177"
 		},
 		"keyword2": {
-			"value": "王二狗",
+			"value": "王老师",
 			"color": "#173177"
 		},
 		"keyword3": {
-			"value": "东9大石头",
+			"value": "东9-201",
 			"color": "#173177"
 		},
 		"keyword4": {
-			"value": "猴年马月",
+			"value": "2018-8-22",
 			"color": "#173177"
 		},
 		"Remark": {
