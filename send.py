@@ -49,7 +49,7 @@ def send_video():
         {
             "touser": "o1bMd085OVPCVhib2XBQpEv_aYVM",
             "template_id": "tHhpwDmV_rMwVZX-gs2rbHgj7YwnBxd0UEIawSI-w2s",
-            "url": "https://m.bilibili.com/video/av3118080.html?share_source=weixin&ts=1540128305&share_medium=iphone&bbid=90deae",
+            "url": "http://www.bilibili.com/video/av30721042/?share_source=weixin&ts=1540128921&share_medium=iphone&bbid=90deae9844a6b7c2fe415db03dc1fa15",
             "data": {
                 "first": {
                     "value": "你好同学，新的教学视频发布了，请及时观看预习！",
