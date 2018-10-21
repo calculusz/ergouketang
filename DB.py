@@ -40,7 +40,7 @@ def query_ppt(db,userid):
         print(temp)
         print(fn)
         print(page)
-        sql2="SELECT * FROM count where source='/static/{0}.html'".format(fn)
+        sql2="SELECT * FROM count where source='/counter/static/{0}.html'".format(fn)
         # sql2 = "SELECT key,count FROM count where source='/static/{0}.html'".format(fn)
         cursor.execute(sql2)
         results=cursor.fetchall()
