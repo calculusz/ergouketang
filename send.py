@@ -7,14 +7,14 @@ data='''
 {
 	"touser": "o1bMd085OVPCVhib2XBQpEv_aYVM",
 	"template_id": "CO8ABJrb3UJ3Foqx_uN1dJQXRXAP9IhiUdGeo5sxpZA",
-	"url": "http://www.wechatshop.mobi:8080/static/presentation.html",
+	"url": "http://www.wechatshop.mobi:8080/counter/static/PPT.html",
 	"data": {
 		"first": {
 			"value": "新的课件发布",
 			"color": "#173177"
 		},
 		"keyword1": {
-			"value": "神经网络",
+			"value": "翻转课堂",
 			"color": "#173177"
 		},
 		"keyword2": {
